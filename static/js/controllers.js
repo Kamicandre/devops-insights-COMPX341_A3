@@ -22,15 +22,20 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
         var data = "";
         if(which === 1) {
             data = $scope.zip1m;
-        } else if(which === 2) {
+        } 
+        else if(which === 2) {
             data = $scope.zip2m;
-        } else if(which === 3) {
+        } 
+        else if(which === 3) {
             data = $scope.zip3m;
-        } else if(which === 4) {
+        } 
+        else if(which === 4) {
             data = $scope.zip4m;
         } 
+        
+        
 
-        if(data.length === 5) {
+        if(data.length > 1) {
             $http({
                 method: "GET",
                 url: '/api/v1/getWeather?zip=' + data
