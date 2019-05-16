@@ -27,7 +27,6 @@
 		var map;
 		var start= {lat: -37.7833, lng: 175.2793};
 		var marker;
-		var address = 'Hamilton, Nz';
 		var geocoder;
 		function initMap() {
 			<!--Initalise Map-->
@@ -36,7 +35,9 @@
 				center: start,
 				zoom: 8
 			});
-			var marker = new google.maps.Marker({map:map, position: start});
+		}
+		function markCity(){
+			var address = document.getElementById('zip1').value;
 			geocoder.geocode({'address': address}, 
 				function(results, status){
 					if(status == "OK"){
