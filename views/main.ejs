@@ -27,7 +27,7 @@
 		var map;
 		var start= {lat: -37.7833, lng: 175.2793};
 		var marker;
-		var city1 = document.getElementById('zip1'), 'nz';
+		var city1 = 'document.getElementById('zip1'), nz';
 		var geocoder = new google.maps.Geocoder();
 		function initMap() {
 			<!--Initalise Map-->
@@ -41,13 +41,13 @@
 				if(status == google.maps.GeocoderStatus.OK){
 					var lat = results[0].geometry.location.lat();
 					var lng = results[0].geometry.location.lng();
-					var marker1 = new google.maps.Marker({position: {lat, lng}, map:map});
+					var pos = {lat, lng}
+					var marker1 = new google.maps.Marker({position: pos, map: map});
 				}
 				else{
 					alert("you fucked up " + status);
 				}
-			}
-			)
+			});
 		}
 			
 
