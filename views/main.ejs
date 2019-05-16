@@ -25,30 +25,30 @@
     </script>
 	<script>
 		var map;
-		var start= {lat: -37.7833, lng: 175.2793};
+		var start= new google.maps.LatLng(-37.7833, 175.2793);
 		var marker;
-		var city1 = 'Hamilton, Nz';
-		var geocoder = new google.maps.Geocoder();
+		var address = 'Hamilton, Nz';
+		var geocoder;
 		function initMap() {
 			<!--Initalise Map-->
+			geocoder = new google.maps.Geocoder();
 			map = new google.maps.Map(document.getElementById('map'), {
 				center: start,
 				zoom: 8
 			});
-			geocoder.geocode({
-				'city1': city1
-			}, function(results, status){
-				if(status == google.maps.GeocoderStatus.OK){
-					var lat = results[0].geometry.location.lat();
-					var lng = results[0].geometry.location.lng();
-					var mylatlng = {lat, lng};
-					var marker1 = new google.maps.Marker({position: pos});
-					marker1.setMap(map);
-				}
-				else{
-					alert("you fucked up " + status);
-				}
-			});
+			var marker = new google.maps.Marker({map:map, position: start});
+			geocoder.geocode({'address': address}, 
+				function(results, status){
+					if(status == google.maps.GeocoderStatus.OK){
+						var marker1 = new google.maps.Marker({
+							position: results[0].geometry.location
+							});
+						marker1.setMap(map);
+					}
+					else{
+						alert("you fucked up " + status);
+					}
+				});
 		}
 			
 
