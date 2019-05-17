@@ -38,7 +38,6 @@
 		}
 		function markCity1(){
 			var marker1;
-			marker1.setMap(null);
 			var address = document.getElementById('zip1').value;
 			geocoder.geocode({'address': address + ', NZ'}, 
 				function(results, status){
@@ -55,7 +54,6 @@
 		}
 		function markCity2(){
 			var marker2;
-			marker2.setMap(null);
 			var address = document.getElementById('zip2').value;
 			geocoder.geocode({'address': address + ', NZ'}, 
 				function(results, status){
@@ -72,7 +70,6 @@
 		}
 		function markCity3(){
 			var marker3;
-			marker3.setMap(null);
 			var address = document.getElementById('zip3').value;
 			geocoder.geocode({'address': address + ', NZ'}, 
 				function(results, status){
@@ -89,7 +86,6 @@
 		}
 		function markCity4(){
 			var marker4;
-			marker4.setMap(null);
 			var address = document.getElementById('zip4').value;
 			geocoder.geocode({'address': address + ', NZ'}, 
 				function(results, status){
