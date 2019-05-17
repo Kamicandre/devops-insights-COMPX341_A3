@@ -36,18 +36,71 @@
 				zoom: 8
 			});
 		}
-		function markCity(){
+		function markCity1(){
+			var marker1;
+			marker1.setMap(null)
 			var address = document.getElementById('zip1').value;
 			geocoder.geocode({'address': address + ', NZ'}, 
 				function(results, status){
 					if(status == "OK"){
-						var marker1 = new google.maps.Marker({
+						marker1 = new google.maps.Marker({
 							position: results[0].geometry.location
 							});
 						marker1.setMap(map);
 					}
 					else{
-						alert("you fucked up " + status);
+						alert("Geocoder is not working because of " + status);
+					}
+				});
+		}
+		function markCity2(){
+			var marker2;
+			marker2.setMap(null)
+			var address = document.getElementById('zip2').value;
+			geocoder.geocode({'address': address + ', NZ'}, 
+				function(results, status){
+					if(status == "OK"){
+						marker2 = new google.maps.Marker({
+							position: results[0].geometry.location
+							});
+						marker2.setMap(map);
+					}
+					else{
+						alert("Geocoder is not working because of " + status);
+					}
+				});
+		}
+		function markCity3(){
+			var marker3;
+			marker3.setMap(null)
+			var address = document.getElementById('zip3').value;
+			geocoder.geocode({'address': address + ', NZ'}, 
+				function(results, status){
+					if(status == "OK"){
+						marker3 = new google.maps.Marker({
+							position: results[0].geometry.location
+							});
+						marker3.setMap(map);
+					}
+					else{
+						alert("Geocoder is not working because of " + status);
+					}
+				});
+		}
+		function markCity4(){
+			var marker4;
+			marker4.setMap(null)
+			var address = document.getElementById('zip4').value;
+			geocoder.geocode({'address': address + ', NZ'}, 
+				function(results, status){
+					if(status == "OK"){
+						marker4 = new google.maps.Marker({
+							position: results[0].geometry.location
+							});
+						marker4.setMap(map);
+					}
+					else{
+						alert("Geocoder is not working because of " + status);
 					}
 				});
 		}
