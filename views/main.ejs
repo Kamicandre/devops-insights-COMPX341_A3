@@ -38,8 +38,7 @@
 		}
 		function markCity(){
 			var address = document.getElementById('zip1').value;
-			geocoder.geocode({'address': address}, 
-				{componentRestrictions: {country: 'NZ'}},
+			geocoder.geocode({'address': address + ', NZ'}, 
 				function(results, status){
 					if(status == "OK"){
 						var marker1 = new google.maps.Marker({
